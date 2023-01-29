@@ -1,0 +1,70 @@
+<odoo>
+  <record id="view_crm_lead_form_inherit" model="ir.ui.view">
+    <field name="name">crm.lead.inherit</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_lead_view_form" />
+    <field name="arch" type="xml">
+      <notebook position="inside">
+        <page string="Checklist" name="checklist">
+          <field name="progress_rate" string="Progress" widget="progressbar" read_only="True" force_save="True" />
+          <field name="checkboxes_ids">
+            <tree editable="bottom" multi_edit="1">
+              <field name="checkbox" widget='checkbox' />
+              <field name="name" />
+              <field name="description" />
+            </tree>
+          </field>
+        </page>
+      </notebook>
+    </field>
+  </record>
+
+  <!-- <record id="view_form_autosave" model="ir.ui.view">
+    <field name="name">Autosave View</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_lead_view_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//form" position="inside">
+        <button type="object" name="save" class="oe_highlight" id="save_button">Save</button>
+        <script>
+          setInterval(function () {
+            var form_datas = $('#save_button').closest('form').serialize();
+            if (form_datas !== save_button_serialize) {
+              var data = JSON.parse(form_datas);
+              console.log(data)
+              var params = {
+                model: 'crm_checklist.checkboxes',
+                method: 'write',
+                args: [parseInt(data.id), {
+                  id: data.id
+                  checkbox: data.checkbox,
+                  name: data.name
+
+                }],
+
+              };
+              ajax.jsonRpc("/web/dataset/call_kw", "call", params).then(function (result) {
+                save_button_serialize = form_datas;
+              });
+            }
+          }, 30000);
+        </script>
+
+      </xpath>
+    </field>
+  </record> -->
+
+
+  <record id="view_crm_lead_kanban_inherit" model="ir.ui.view">
+    <field name="name">crm.lead.kanban.inherit</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_kanban_view_leads" />
+    <field name="arch" type="xml">
+      <xpath expr="//div[contains(@class, 'o_kanban_record_bottom')]" position="after">
+        <field name="progress_rate" string="Progress" widget="progressbar" read_only="True" force_save="True" />
+      </xpath>
+    </field>
+  </record>
+
+
+</odoo>

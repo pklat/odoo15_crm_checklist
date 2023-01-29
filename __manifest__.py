@@ -1,35 +1,36 @@
 # -*- coding: utf-8 -*-
 {
     'name': "crm_checklist",
-
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+       CRM-Erweiterung - Checklisten""",
     'description': """
-        Long description of module's purpose
+        CRM-Erweiterung welche im CRM-Modul eine Checkliste als Notebook mit Progressbar hinzufügt.
     """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'author': "Paul Klat",
+    'website': "https://www.manatec.de/",
+    'category': 'Productivity',
+    'version': '15.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base','crm'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/checklist.xml',
+        # 'views/templates.xml',
     ],
+    'assets': {
+        'web.assets_backend': [           
+            "crm_checklist/static/src/js/update_progress.js",
+        ],
+        },
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    # 'demo': [
+    #     'demo/demo.xml',
+    # ],
+    'license': 'LGPL-3',
+    'installable': True,
+    'application': True,
+    'auto_install': False,
 }
