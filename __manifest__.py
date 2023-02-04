@@ -22,7 +22,7 @@
     ],
     'assets': {
         'web.assets_backend': [           
-            "crm_checklist/static/src/js/update_progress.js",
+            # "crm_checklist/static/src/js/update_progress.js",
         ],
         },
     # only loaded in demonstration mode

@@ -16,11 +16,8 @@ class crm_checklist(models.Model):
     @api.onchange('checkboxes_ids')
     def _compute_progress(self):
         for rec in self:
-            #print(rec.name)
-            #rec.progress_rate=0
             checkboxes_count = self.env['crm_checklist.checkboxes'].search([('checkbox_id','=',rec.id)])
             if len(checkboxes_count) > 0:            
-                #print("Select checkboxes:",checkboxes_count, len(checkboxes_count))
                 rec.checkboxes_count = len(checkboxes_count)
                 count_progress = 0                
                 for recc in checkboxes_count:
@@ -35,5 +32,3 @@ class crm_checklist(models.Model):
                         print(a)
             else:
                 rec.progress_rate=0
-    def save(self):
-        print("Call SAVE!")

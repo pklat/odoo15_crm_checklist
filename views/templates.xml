@@ -6,13 +6,13 @@
 
 
 
-    <template id="assets_backend_ext"
+    <!-- <template id="assets_backend_ext"
     inherit_id="web.assets_backend">
-        <!-- <xpath expr="//script[last()]" position="after"> -->
+        < <xpath expr="//script[last()]" position="after">
         <xpath expr="." position="inside">
             <script type="text/javascript"
             src="/static/src/js/update_progress.js"/>
         </xpath>
-    </template>
+    </template> -->
     </data>
 </odoo>

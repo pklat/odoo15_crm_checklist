@@ -13,9 +13,9 @@ class crm_checkbox(models.Model):
     #def save(self):
     #    print("Save")
 
-    @api.onchange('checkbox')
-    def _checkbox_on_change(self):
-        for rec in self:
-            print(rec.checkbox)
-        print("Onchange")
-        #self.write()
+    # @api.onchange('checkbox')
+    # def _checkbox_on_change(self):
+    #     for rec in self:
+    #         print(rec.checkbox)
+    #     print("Onchange")
+    #     #self.write()
