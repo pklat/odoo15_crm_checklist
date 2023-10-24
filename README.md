@@ -9,7 +9,7 @@
   <br>
 </h1>
 
-<h4 align="center">A Checklist Extension for the CRM  <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">A Checklist Extension for the CRM Odoo 15.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
@@ -111,11 +111,6 @@ This software uses the following open source packages:
 <a href="https://www.patreon.com/amitmerchant">
 	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
 
 ## License
 
